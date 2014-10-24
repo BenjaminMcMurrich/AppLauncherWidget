@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InstalledAppsTableViewController : UITableViewController
+@interface DetectedAppsTableViewController : UITableViewController
+
+- (IBAction)cancelButtonAction:(id)sender;
+
+- (void) completionHandler:(void (^)(NSDictionary * app))block;
 
 @end

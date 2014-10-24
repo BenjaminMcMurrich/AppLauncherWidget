@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="g1g-4s-oN4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="g1g-4s-oN4">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--App Launcher Widget-->
+        <!--Add a favorite app-->
         <scene sceneID="1Zx-AH-jwV">
             <objects>
-                <tableViewController id="K9T-oJ-GIj" customClass="InstalledAppsTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DetectedAppsTableViewController" id="K9T-oJ-GIj" customClass="DetectedAppsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="60" sectionHeaderHeight="10" sectionFooterHeight="10" id="OUs-NH-SbH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,8 +52,12 @@
                             <outlet property="delegate" destination="K9T-oJ-GIj" id="74b-Df-p5g"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="App Launcher Widget" id="96c-cW-IMq">
-                        <barButtonItem key="rightBarButtonItem" title="Info" id="HNA-eq-ftr"/>
+                    <navigationItem key="navigationItem" title="Add a favorite app" id="96c-cW-IMq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Fkv-rh-fiG">
+                            <connections>
+                                <action selector="cancelButtonAction:" destination="K9T-oJ-GIj" id="lJm-cS-Ji0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rPN-wl-m07" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -76,17 +80,16 @@
             </objects>
             <point key="canvasLocation" x="-851" y="90"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Favorite apps-->
         <scene sceneID="6xY-iM-hZK">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BM0-Br-dyv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="PSu-f1-RyF" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2Mo-q9-a6q">
+                <tableViewController id="PSu-f1-RyF" customClass="FavoriteAppsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="60" sectionHeaderHeight="10" sectionFooterHeight="10" id="2Mo-q9-a6q">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AppCell" rowHeight="60" id="Pze-Nm-qS0">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FavoriteAppCell" rowHeight="60" id="Pze-Nm-qS0">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pze-Nm-qS0" id="9L6-Zq-wu7">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -123,15 +126,15 @@
                             <outlet property="delegate" destination="PSu-f1-RyF" id="VRA-4N-Sz6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="87E-8W-nK8">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="Sye-qF-Enl">
+                    <navigationItem key="navigationItem" title="Favorite apps" id="87E-8W-nK8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sye-qF-Enl">
                             <connections>
-                                <segue destination="x85-Dk-dfO" kind="presentation" id="DKF-NI-jRn"/>
+                                <action selector="addButtonAction:" destination="PSu-f1-RyF" id="YWb-R2-Lhx"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Ioc-oV-dEb"/>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BM0-Br-dyv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-806" y="754"/>
         </scene>

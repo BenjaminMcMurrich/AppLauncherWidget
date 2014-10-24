@@ -11,16 +11,20 @@
 		7B8ABDBF19F116E600258FF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8ABDBE19F116E600258FF8 /* main.m */; };
 		7B8ABDC219F116E600258FF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8ABDC119F116E600258FF8 /* AppDelegate.m */; };
 		7B8ABDC819F116E600258FF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8ABDC619F116E600258FF8 /* Main.storyboard */; };
-		7B8ABDCA19F116E600258FF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8ABDC919F116E600258FF8 /* Images.xcassets */; };
 		7B8ABDCD19F116E600258FF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B8ABDCB19F116E600258FF8 /* LaunchScreen.xib */; };
 		7B8ABDD919F116E600258FF8 /* AppLauncherWidgetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8ABDD819F116E600258FF8 /* AppLauncherWidgetTests.m */; };
 		7B8ABDE619F1189400258FF8 /* iHasApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8ABDE419F1189400258FF8 /* iHasApp.m */; };
 		7B8ABDE719F1189400258FF8 /* schemeApps.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B8ABDE519F1189400258FF8 /* schemeApps.json */; };
-		7B8ABDEA19F11B0100258FF8 /* InstalledAppsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8ABDE919F11B0100258FF8 /* InstalledAppsTableViewController.m */; };
+		7B8ABDEA19F11B0100258FF8 /* DetectedAppsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8ABDE919F11B0100258FF8 /* DetectedAppsTableViewController.m */; };
 		7B8ABDF119F11DFF00258FF8 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8ABDF019F11DFF00258FF8 /* NotificationCenter.framework */; };
 		7B8ABDF719F11DFF00258FF8 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8ABDF619F11DFF00258FF8 /* TodayViewController.m */; };
 		7B8ABDF919F11DFF00258FF8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8ABDF819F11DFF00258FF8 /* MainInterface.storyboard */; };
 		7B8ABDFC19F11DFF00258FF8 /* Favorite Apps.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7B8ABDEF19F11DFF00258FF8 /* Favorite Apps.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B566FF6519F9BFA2007CC25D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8ABDC919F116E600258FF8 /* Images.xcassets */; };
+		B566FF6619F9C068007CC25D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8ABDC919F116E600258FF8 /* Images.xcassets */; };
+		B566FF6919F9C98B007CC25D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B566FF6719F9C98B007CC25D /* Default-568h@2x.png */; };
+		B566FF6A19F9C98B007CC25D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B566FF6819F9C98B007CC25D /* Default@2x.png */; };
+		B5BB8BE019F992B000780C23 /* FavoriteAppsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB8BDF19F992B000780C23 /* FavoriteAppsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,14 +82,18 @@
 		7B8ABDE319F1189400258FF8 /* iHasApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iHasApp.h; sourceTree = "<group>"; };
 		7B8ABDE419F1189400258FF8 /* iHasApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iHasApp.m; sourceTree = "<group>"; };
 		7B8ABDE519F1189400258FF8 /* schemeApps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schemeApps.json; sourceTree = "<group>"; };
-		7B8ABDE819F11B0100258FF8 /* InstalledAppsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstalledAppsTableViewController.h; sourceTree = "<group>"; };
-		7B8ABDE919F11B0100258FF8 /* InstalledAppsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstalledAppsTableViewController.m; sourceTree = "<group>"; };
+		7B8ABDE819F11B0100258FF8 /* DetectedAppsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetectedAppsTableViewController.h; sourceTree = "<group>"; };
+		7B8ABDE919F11B0100258FF8 /* DetectedAppsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetectedAppsTableViewController.m; sourceTree = "<group>"; };
 		7B8ABDEF19F11DFF00258FF8 /* Favorite Apps.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Favorite Apps.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8ABDF019F11DFF00258FF8 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		7B8ABDF419F11DFF00258FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B8ABDF519F11DFF00258FF8 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
 		7B8ABDF619F11DFF00258FF8 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		7B8ABDF819F11DFF00258FF8 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		B566FF6719F9C98B007CC25D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B566FF6819F9C98B007CC25D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B5BB8BDE19F992B000780C23 /* FavoriteAppsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteAppsTableViewController.h; sourceTree = "<group>"; };
+		B5BB8BDF19F992B000780C23 /* FavoriteAppsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteAppsTableViewController.m; sourceTree = "<group>"; };
 		DAA23205A1FC97453D317CB3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,9 +164,11 @@
 				7B8ABDC619F116E600258FF8 /* Main.storyboard */,
 				7B8ABDC919F116E600258FF8 /* Images.xcassets */,
 				7B8ABDCB19F116E600258FF8 /* LaunchScreen.xib */,
+				7B8ABDE819F11B0100258FF8 /* DetectedAppsTableViewController.h */,
+				7B8ABDE919F11B0100258FF8 /* DetectedAppsTableViewController.m */,
+				B5BB8BDE19F992B000780C23 /* FavoriteAppsTableViewController.h */,
+				B5BB8BDF19F992B000780C23 /* FavoriteAppsTableViewController.m */,
 				7B8ABDBC19F116E600258FF8 /* Supporting Files */,
-				7B8ABDE819F11B0100258FF8 /* InstalledAppsTableViewController.h */,
-				7B8ABDE919F11B0100258FF8 /* InstalledAppsTableViewController.m */,
 			);
 			path = AppLauncherWidget;
 			sourceTree = "<group>";
@@ -166,6 +176,8 @@
 		7B8ABDBC19F116E600258FF8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B566FF6719F9C98B007CC25D /* Default-568h@2x.png */,
+				B566FF6819F9C98B007CC25D /* Default@2x.png */,
 				7B8ABDBD19F116E600258FF8 /* Info.plist */,
 				7B8ABDBE19F116E600258FF8 /* main.m */,
 			);
@@ -305,6 +317,7 @@
 					};
 					7B8ABDEE19F11DFF00258FF8 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = URYE7Q84ZM;
 					};
 				};
 			};
@@ -333,10 +346,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B566FF6A19F9C98B007CC25D /* Default@2x.png in Resources */,
+				B566FF6919F9C98B007CC25D /* Default-568h@2x.png in Resources */,
 				7B8ABDE719F1189400258FF8 /* schemeApps.json in Resources */,
+				B566FF6519F9BFA2007CC25D /* Images.xcassets in Resources */,
 				7B8ABDC819F116E600258FF8 /* Main.storyboard in Resources */,
 				7B8ABDCD19F116E600258FF8 /* LaunchScreen.xib in Resources */,
-				7B8ABDCA19F116E600258FF8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B8ABDF919F11DFF00258FF8 /* MainInterface.storyboard in Resources */,
+				B566FF6619F9C068007CC25D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,9 +411,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B8ABDEA19F11B0100258FF8 /* InstalledAppsTableViewController.m in Sources */,
+				7B8ABDEA19F11B0100258FF8 /* DetectedAppsTableViewController.m in Sources */,
 				7B8ABDC219F116E600258FF8 /* AppDelegate.m in Sources */,
 				7B8ABDE619F1189400258FF8 /* iHasApp.m in Sources */,
+				B5BB8BE019F992B000780C23 /* FavoriteAppsTableViewController.m in Sources */,
 				7B8ABDBF19F116E600258FF8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,10 +570,12 @@
 			baseConfigurationReference = DAA23205A1FC97453D317CB3 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Benjamin McMurrich (URYE7Q84ZM)";
 				INFOPLIST_FILE = AppLauncherWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1e53d768-cdbb-4a36-bfe9-09d1382246e5";
 			};
 			name = Release;
 		};
@@ -597,14 +616,17 @@
 		7B8ABE0019F11DFF00258FF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Favorite Apps/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -612,10 +634,13 @@
 		7B8ABE0119F11DFF00258FF8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Benjamin McMurrich (URYE7Q84ZM)";
 				INFOPLIST_FILE = "Favorite Apps/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ce58e50d-e4fd-41e5-8e7f-a61097e79263";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -657,6 +682,7 @@
 				7B8ABE0119F11DFF00258FF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -6,18 +6,20 @@
 //  Copyright (c) 2014 AppDelegate. All rights reserved.
 //
 
-#import "InstalledAppsTableViewController.h"
+#import "DetectedAppsTableViewController.h"
 #import "iHasApp.h"
 #import "UIImageView+AFNetworking.h"
 
-@interface InstalledAppsTableViewController ()
+@interface DetectedAppsTableViewController ()
 
 @property (nonatomic, strong) iHasApp *detectionObject;
 @property (nonatomic, strong) NSArray *detectedApps;
 
+@property id completionBlock;
+
 @end
 
-@implementation InstalledAppsTableViewController
+@implementation DetectedAppsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,6 +27,10 @@
     self.detectionObject = [[iHasApp alloc] init];
     
     [self detectApps];
+}
+
+- (void) completionHandler:(void (^)(NSDictionary * app))block {
+    self.completionBlock = block;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,6 +52,7 @@
 }
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if(self.detectedApps.count ==0) return @"Apps detection in progress...";
     return @"Detected apps";
 }
 
@@ -80,10 +87,14 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
     } else {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        
     }
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    [self dismissViewControllerAnimated:YES completion:^{
+        if(self.completionBlock) ((void (^)()) self.completionBlock)(self.detectedApps[indexPath.row]);
+    }];
 }
+
 
 #pragma mark - iHasApp methods
 
@@ -121,4 +132,7 @@
     [self.tableView reloadData];
 }
 
+- (IBAction)cancelButtonAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
