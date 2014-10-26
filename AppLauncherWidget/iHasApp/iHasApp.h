@@ -32,6 +32,8 @@
  */
 @property (nonatomic, copy) NSString *country;
 
+@property (nonatomic, strong) NSMutableDictionary *detectedAppsSchemeDictionary;
+
 
 /**---------------------------------------------------------------------------------------
  * @name Detection Methods

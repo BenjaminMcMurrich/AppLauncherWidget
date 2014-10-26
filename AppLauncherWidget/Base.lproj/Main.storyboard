@@ -80,7 +80,7 @@
             </objects>
             <point key="canvasLocation" x="-851" y="90"/>
         </scene>
-        <!--Favorite apps-->
+        <!--Favorite apps widget-->
         <scene sceneID="6xY-iM-hZK">
             <objects>
                 <tableViewController id="PSu-f1-RyF" customClass="FavoriteAppsTableViewController" sceneMemberID="viewController">
@@ -126,7 +126,7 @@
                             <outlet property="delegate" destination="PSu-f1-RyF" id="VRA-4N-Sz6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Favorite apps" id="87E-8W-nK8">
+                    <navigationItem key="navigationItem" title="Favorite apps widget" id="87E-8W-nK8">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sye-qF-Enl">
                             <connections>
                                 <action selector="addButtonAction:" destination="PSu-f1-RyF" id="YWb-R2-Lhx"/>

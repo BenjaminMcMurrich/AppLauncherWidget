@@ -8,6 +8,7 @@
 
 #import "FavoriteAppsTableViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "AppFactory.h"
 #import "DetectedAppsTableViewController.h"
 
 @interface FavoriteAppsTableViewController ()
@@ -21,7 +22,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.favoriteApps = [[NSMutableArray alloc] init];
+    self.favoriteApps = [[NSMutableArray alloc] initWithArray:[[AppFactory sharedInstance] favoriteApps]];
+    if(self.favoriteApps.count > 0) {
+        UIBarButtonItem * edit = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editButtonAction:)];
+        [self.navigationItem setLeftBarButtonItem:edit];
+    }
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"fr.mcmurrich.AppLauncherWidget.addApp" object:nil queue:0 usingBlock:^(NSNotification *note) {
+        [self addButtonAction:nil];
+    }];
     
 }
 
@@ -42,6 +51,15 @@
     return self.favoriteApps.count;
 }
 
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return @"Favorite apps";
+}
+
+-(NSString*)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+    if(self.favoriteApps.count == 0) return @"Tap the + button to add your first favorite app.";
+    return @"";
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FavoriteAppCell" forIndexPath:indexPath];
     
@@ -49,7 +67,6 @@
     NSDictionary * appDictionary = self.favoriteApps[indexPath.row];
     
     NSString *trackName = [appDictionary objectForKey:@"trackName"];
-    NSString *trackId = [[appDictionary objectForKey:@"trackId"] description];
     //NSString *artworkUrl60 = [appDictionary objectForKey:@"artworkUrl60"];
     
     NSString *iconUrlString = [appDictionary objectForKey:@"artworkUrl512"];
@@ -75,6 +92,12 @@
         [self.favoriteApps removeObjectAtIndex:indexPath.row];
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];
         if (self.favoriteApps.count == 0)[self.navigationItem setLeftBarButtonItem:nil];
+        [[AppFactory sharedInstance] saveFavoriteApps:self.favoriteApps];
+        
+        UIBarButtonItem * add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonAction:)];
+        [self.navigationItem setRightBarButtonItem:add];
+        
+        if(self.favoriteApps.count == 0) [self.tableView performSelector:@selector(reloadData) withObject:nil afterDelay:0.5];
     }
 }
 
@@ -83,6 +106,7 @@
     NSDictionary *appToMove = [self.favoriteApps objectAtIndex:sourceIndexPath.row];
     [self.favoriteApps removeObjectAtIndex:sourceIndexPath.row];
     [self.favoriteApps insertObject:appToMove atIndex:destinationIndexPath.row];
+    [[AppFactory sharedInstance] saveFavoriteApps:self.favoriteApps];
 }
 
 
@@ -106,7 +130,7 @@
 }
 
 - (IBAction)addButtonAction:(id)sender {
-    
+
     if (self.tableView.editing && self.favoriteApps.count>0) {
         [self.tableView setEditing:FALSE animated:YES];
         UIBarButtonItem * edit = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editButtonAction:)];
@@ -117,6 +141,9 @@
     
     [viewController completionHandler:^(NSDictionary *app) {
         // Tell the tableView we're going to add (or remove) items.
+        
+        if(self.favoriteApps.count == 0) [self.tableView reloadData];
+        
         [self.tableView beginUpdates];
         
         [self.favoriteApps addObject:app];
@@ -134,8 +161,12 @@
                               atScrollPosition:UITableViewScrollPositionBottom
                                       animated:YES];
         
+        if (self.favoriteApps.count >= 5)[self.navigationItem setRightBarButtonItem:nil];
+        
         UIBarButtonItem * edit = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editButtonAction:)];
         [self.navigationItem setLeftBarButtonItem:edit];
+        
+        [[AppFactory sharedInstance] saveFavoriteApps:self.favoriteApps];
     }];
     
     UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];

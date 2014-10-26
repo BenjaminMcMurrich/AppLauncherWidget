@@ -18,10 +18,44 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>fr.mcmurrich.AppLauncherWidget</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>AppLauncherWidget</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UILaunchImages</key>
+	<array>
+		<dict>
+			<key>UILaunchImageMinimumOSVersion</key>
+			<string>8.0</string>
+			<key>UILaunchImageName</key>
+			<string>Default</string>
+			<key>UILaunchImageOrientation</key>
+			<string>Portrait</string>
+			<key>UILaunchImageSize</key>
+			<string>{320x480}</string>
+		</dict>
+		<dict>
+			<key>UILaunchImageMinimumOSVersion</key>
+			<string>8.0</string>
+			<key>UILaunchImageName</key>
+			<string>Default</string>
+			<key>UILaunchImageOrientation</key>
+			<string>Portrait</string>
+			<key>UILaunchImageSize</key>
+			<string>{320x568}</string>
+		</dict>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -42,29 +76,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UILaunchImages</key>
-	<array>
-		<dict>
-			<key>UILaunchImageName</key>
-			<string>Default</string>
-			<key>UILaunchImageMinimumOSVersion</key>
-			<string>8.0</string>
-			<key>UILaunchImageSize</key>
-			<string>{320x480}</string>
-			<key>UILaunchImageOrientation</key>
-			<string>Portrait</string>
-		</dict>
-		<dict>
-			<key>UILaunchImageName</key>
-			<string>Default</string>
-			<key>UILaunchImageMinimumOSVersion</key>
-			<string>8.0</string>
-			<key>UILaunchImageSize</key>
-			<string>{320x568}</string>
-			<key>UILaunchImageOrientation</key>
-			<string>Portrait</string>
-		</dict>
 	</array>
 </dict>
 </plist>

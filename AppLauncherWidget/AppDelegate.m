@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AppFactory.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.mcmurrich.TodayExtensionSharingDefaults"];
+    [sharedDefaults setObject:@"Tap to add the first one." forKey:@"NoFavoriteAppText"];
+    [sharedDefaults synchronize];
+    
     return YES;
 }
 
@@ -36,10 +41,19 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[AppFactory sharedInstance] detectApps];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
+    if ([[url absoluteString] isEqualToString:@"AppLauncherWidget://add"]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"fr.mcmurrich.AppLauncherWidget.addApp" object:nil];
+    }
+    return TRUE;
 }
 
 @end

@@ -24,6 +24,8 @@
 		B566FF6619F9C068007CC25D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8ABDC919F116E600258FF8 /* Images.xcassets */; };
 		B566FF6919F9C98B007CC25D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B566FF6719F9C98B007CC25D /* Default-568h@2x.png */; };
 		B566FF6A19F9C98B007CC25D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B566FF6819F9C98B007CC25D /* Default@2x.png */; };
+		B5853E3F19FC3C7700A9C27B /* AppFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B5853E3E19FC3C7700A9C27B /* AppFactory.m */; };
+		B5853E4719FC516000A9C27B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5853E4619FC516000A9C27B /* libPods.a */; };
 		B5BB8BE019F992B000780C23 /* FavoriteAppsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB8BDF19F992B000780C23 /* FavoriteAppsTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +94,11 @@
 		7B8ABDF819F11DFF00258FF8 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		B566FF6719F9C98B007CC25D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B566FF6819F9C98B007CC25D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B5853E3D19FC3C7700A9C27B /* AppFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppFactory.h; sourceTree = "<group>"; };
+		B5853E3E19FC3C7700A9C27B /* AppFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppFactory.m; sourceTree = "<group>"; };
+		B5853E4419FC42E700A9C27B /* AppLauncherWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AppLauncherWidget.entitlements; sourceTree = "<group>"; };
+		B5853E4619FC516000A9C27B /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		B5853E4819FD361E00A9C27B /* Favorite Apps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Favorite Apps.entitlements"; sourceTree = "<group>"; };
 		B5BB8BDE19F992B000780C23 /* FavoriteAppsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteAppsTableViewController.h; sourceTree = "<group>"; };
 		B5BB8BDF19F992B000780C23 /* FavoriteAppsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteAppsTableViewController.m; sourceTree = "<group>"; };
 		DAA23205A1FC97453D317CB3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5853E4719FC516000A9C27B /* libPods.a in Frameworks */,
 				7B8ABDF119F11DFF00258FF8 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,6 +135,7 @@
 		22AB54FBBD1B73E07E9FE4B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5853E4619FC516000A9C27B /* libPods.a */,
 				1887E0817E859C555CC5148D /* libPods.a */,
 				7B8ABDF019F11DFF00258FF8 /* NotificationCenter.framework */,
 			);
@@ -158,12 +167,15 @@
 		7B8ABDBB19F116E600258FF8 /* AppLauncherWidget */ = {
 			isa = PBXGroup;
 			children = (
+				B5853E4419FC42E700A9C27B /* AppLauncherWidget.entitlements */,
 				7B8ABDE219F1189400258FF8 /* iHasApp */,
 				7B8ABDC019F116E600258FF8 /* AppDelegate.h */,
 				7B8ABDC119F116E600258FF8 /* AppDelegate.m */,
 				7B8ABDC619F116E600258FF8 /* Main.storyboard */,
 				7B8ABDC919F116E600258FF8 /* Images.xcassets */,
 				7B8ABDCB19F116E600258FF8 /* LaunchScreen.xib */,
+				B5853E3D19FC3C7700A9C27B /* AppFactory.h */,
+				B5853E3E19FC3C7700A9C27B /* AppFactory.m */,
 				7B8ABDE819F11B0100258FF8 /* DetectedAppsTableViewController.h */,
 				7B8ABDE919F11B0100258FF8 /* DetectedAppsTableViewController.m */,
 				B5BB8BDE19F992B000780C23 /* FavoriteAppsTableViewController.h */,
@@ -214,6 +226,7 @@
 		7B8ABDF219F11DFF00258FF8 /* Favorite Apps */ = {
 			isa = PBXGroup;
 			children = (
+				B5853E4819FD361E00A9C27B /* Favorite Apps.entitlements */,
 				7B8ABDF519F11DFF00258FF8 /* TodayViewController.h */,
 				7B8ABDF619F11DFF00258FF8 /* TodayViewController.m */,
 				7B8ABDF819F11DFF00258FF8 /* MainInterface.storyboard */,
@@ -310,6 +323,12 @@
 				TargetAttributes = {
 					7B8ABDB819F116E600258FF8 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = URYE7Q84ZM;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					7B8ABDD119F116E600258FF8 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -318,6 +337,11 @@
 					7B8ABDEE19F11DFF00258FF8 = {
 						CreatedOnToolsVersion = 6.0.1;
 						DevelopmentTeam = URYE7Q84ZM;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -411,6 +435,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5853E3F19FC3C7700A9C27B /* AppFactory.m in Sources */,
 				7B8ABDEA19F11B0100258FF8 /* DetectedAppsTableViewController.m in Sources */,
 				7B8ABDC219F116E600258FF8 /* AppDelegate.m in Sources */,
 				7B8ABDE619F1189400258FF8 /* iHasApp.m in Sources */,
@@ -558,10 +583,14 @@
 			baseConfigurationReference = 5A3DE438789E6769A97E862B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AppLauncherWidget/AppLauncherWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AppLauncherWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6f5d4ad1-3a77-44c2-a896-548f873a9fba";
 			};
 			name = Debug;
 		};
@@ -570,17 +599,20 @@
 			baseConfigurationReference = DAA23205A1FC97453D317CB3 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AppLauncherWidget/AppLauncherWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Benjamin McMurrich (URYE7Q84ZM)";
 				INFOPLIST_FILE = AppLauncherWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1e53d768-cdbb-4a36-bfe9-09d1382246e5";
+				PROVISIONING_PROFILE = "6f5d4ad1-3a77-44c2-a896-548f873a9fba";
 			};
 			name = Release;
 		};
 		7B8ABDE019F116E600258FF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A3DE438789E6769A97E862B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -600,6 +632,7 @@
 		};
 		7B8ABDE119F116E600258FF8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAA23205A1FC97453D317CB3 /* Pods.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -615,7 +648,9 @@
 		};
 		7B8ABE0019F11DFF00258FF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A3DE438789E6769A97E862B /* Pods.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Favorite Apps/Favorite Apps.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -625,22 +660,32 @@
 				INFOPLIST_FILE = "Favorite Apps/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "f2cce1a1-b5cc-4278-ae5a-82a8c2b13340";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
 		7B8ABE0119F11DFF00258FF8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAA23205A1FC97453D317CB3 /* Pods.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Favorite Apps/Favorite Apps.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Benjamin McMurrich (URYE7Q84ZM)";
 				INFOPLIST_FILE = "Favorite Apps/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ce58e50d-e4fd-41e5-8e7f-a61097e79263";
+				PROVISIONING_PROFILE = "f2cce1a1-b5cc-4278-ae5a-82a8c2b13340";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

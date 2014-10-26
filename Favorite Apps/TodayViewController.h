@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TodayViewController : UIViewController
-
+- (IBAction) goToApp: (id)sender;
 @end

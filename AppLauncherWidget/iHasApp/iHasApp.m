@@ -19,6 +19,9 @@
                         withFailure:(void (^)(NSError *error))failureBlock {
     dispatch_queue_t detection_thread = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(detection_thread, ^{
+        
+        self.detectedAppsSchemeDictionary = [[NSMutableDictionary alloc] init];
+        
         [self retrieveSchemeAppsDictionaryWithSuccess:^(NSDictionary *schemeAppsDictionary) {
             NSMutableArray *schemeDictionaries = [[NSMutableArray alloc] init];
             for (NSString *scheme in schemeAppsDictionary.allKeys) {
@@ -40,6 +43,8 @@
                             if (successfulAppIds[appId] == nil) {
                                 successfulAppIds[appId] = [NSObject new];
                                 incrementalAppIds[appId] = [NSObject new];
+                                
+                                [self.detectedAppsSchemeDictionary setObject:[NSString stringWithFormat:@"%@://", scheme] forKey:[appId description]];
                             }
                         }
                     }

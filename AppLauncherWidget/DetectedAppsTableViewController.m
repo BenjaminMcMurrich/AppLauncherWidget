@@ -7,12 +7,11 @@
 //
 
 #import "DetectedAppsTableViewController.h"
-#import "iHasApp.h"
+#import "AppFactory.h"
 #import "UIImageView+AFNetworking.h"
 
 @interface DetectedAppsTableViewController ()
 
-@property (nonatomic, strong) iHasApp *detectionObject;
 @property (nonatomic, strong) NSArray *detectedApps;
 
 @property id completionBlock;
@@ -23,10 +22,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.detectionObject = [[iHasApp alloc] init];
     
-    [self detectApps];
+    self.detectedApps = [AppFactory sharedInstance].detectedApps;
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:ALWNotificationAppsDetected object:nil queue:0 usingBlock:^(NSNotification *note) {
+        self.detectedApps = [AppFactory sharedInstance].detectedApps;
+        [self.tableView reloadData];
+    }];
 }
 
 - (void) completionHandler:(void (^)(NSDictionary * app))block {
@@ -93,43 +95,6 @@
     [self dismissViewControllerAnimated:YES completion:^{
         if(self.completionBlock) ((void (^)()) self.completionBlock)(self.detectedApps[indexPath.row]);
     }];
-}
-
-
-#pragma mark - iHasApp methods
-
-- (void)detectApps
-{
-    if ([UIApplication sharedApplication].networkActivityIndicatorVisible) return;
-    
-    NSLog(@"Detection begun!");
-    [self.detectionObject detectAppDictionariesWithIncremental:^(NSArray *appDictionaries) {
-        NSLog(@"Incremental appDictionaries.count: %lu", (unsigned long)appDictionaries.count);
-        NSMutableArray *newAppDictionaries = [NSMutableArray arrayWithArray:self.detectedApps];
-        [newAppDictionaries addObjectsFromArray:appDictionaries];
-        self.detectedApps = newAppDictionaries;
-        [self.tableView reloadData];
-    } withSuccess:^(NSArray *appDictionaries) {
-        NSLog(@"Successful appDictionaries.count: %lu", (unsigned long)appDictionaries.count);
-        self.detectedApps = appDictionaries;
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        [self.tableView reloadData];
-    } withFailure:^(NSError *error) {
-        NSLog(@"Error: %@", error.localizedDescription);
-        self.detectedApps = [NSArray array];
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                            message:error.localizedDescription
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-        [alertView show];
-        [self.tableView reloadData];
-    }];
-    
-    self.detectedApps = nil;
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    [self.tableView reloadData];
 }
 
 - (IBAction)cancelButtonAction:(id)sender {
