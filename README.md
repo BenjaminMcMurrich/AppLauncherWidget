@@ -1,4 +1,7 @@
 AppLauncherWidget
 =================
 
-iOS App with a widget for launching favorite apps from the notification center (dev in progress...)
+Favorite apps widget is a dead simple iOS app that allow you to launch your favorite apps from a widget...
+
+![alt text](http://mcmurrich.fr/products/applauncherwidget/screens.png "Screenshots")
+
